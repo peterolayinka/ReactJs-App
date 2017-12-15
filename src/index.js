@@ -54,7 +54,11 @@ class Game extends React.Component {
             xIsNext: true,
             stepNumber: 0,
         };
-    
+        this.baseSquareState = this.state
+    }
+
+    resetGame = () => {
+        this.setState(this.baseSquareState)
     }
 
     handleClick(i) {
@@ -115,6 +119,7 @@ class Game extends React.Component {
                     />
                 </div>
                 <div className="game-info">
+                    <button onClick={() => this.resetGame() }>Restart</button>
                     <div>{status}</div>
                     <ol>{moves}</ol>
                 </div>
